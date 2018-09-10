@@ -14,6 +14,10 @@ export default {
     };
   },
 
+  mounted(){
+    console.log(this.$attrs);
+  },
+
   methods: {
     click(){
       eventBus.$emit("child-two-click", "child two say hi to child one");

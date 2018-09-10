@@ -5,7 +5,7 @@
     <child-one ref="child-one" @on-click="childClickHandler"></child-one>
 
     <!-- eventBus 兄弟组件 or 祖孙组件通讯 -->
-    <child-two></child-two>
+    <child-two :data-abc="mock"></child-two>
 
     <!-- props 父子组件通讯 -->
     <!--msg: 静态传值-->
@@ -33,6 +33,7 @@ export default {
 
   data() {
     return {
+      mock: "parent mock data",
       msg: "parent-msg",
       btnText: "Parent Changed me",
       count: 0
