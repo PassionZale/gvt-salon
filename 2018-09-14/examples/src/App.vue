@@ -4,8 +4,12 @@
     <!-- $refs, $children, $parent 父子组件通讯 -->
     <child-one ref="child-one" @on-click="childClickHandler"></child-one>
 
+    <hr>
+
     <!-- eventBus 兄弟组件 or 祖孙组件通讯 -->
     <child-two :data-abc="mock"></child-two>
+
+    <hr>
 
     <!-- props 父子组件通讯 -->
     <!--msg: 静态传值-->
@@ -13,10 +17,14 @@
     <!--parentCount: 双向绑定-->
     <child-three msg="msg-from-parent" :btn-text="btnText" :parent-count.sync="count">
       <div>
-        <button class="btn btn-default" @click="() => count++">Parent Button</button>
+        <button class="btn btn-success" @click="() => count++">Parent Button</button>
         <p>父组件中的 count: {{count}}</p>
       </div>
     </child-three>
+
+    <hr>
+
+    <permission></permission>
 
   </div>
 </template>
@@ -25,11 +33,12 @@
 import ChildOne from "./components/ChildOne.vue";
 import ChildTwo from "./components/ChildTwo.vue";
 import ChildThree from "./components/ChildThree.vue";
+import Permission from "./components/Permission.vue";
 
 export default {
   name: "app",
 
-  components: { ChildOne, ChildTwo, ChildThree },
+  components: { ChildOne, ChildTwo, ChildThree, Permission },
 
   data() {
     return {

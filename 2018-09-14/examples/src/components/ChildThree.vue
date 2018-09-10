@@ -1,5 +1,5 @@
 <template>
-    <div style="margin-top:40px;">
+    <div>
       <div>
         <button class="btn btn-success" @click="click">{{ btnText }}</button>
         <p>子组件中的 count: {{ count }}</p>
